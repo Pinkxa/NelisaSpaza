@@ -1,0 +1,10 @@
+INSERT INTO categories (catname) VALUES ('Dairy Products');
+INSERT INTO categories (catname) VALUES ('Bakery');
+INSERT INTO categories (catname) VALUES ('Cannned Food');
+INSERT INTO categories (catname) VALUES ('Cold Beverages');
+INSERT INTO categories (catname) VALUES ('Bulk');
+INSERT INTO categories (catname) VALUES ('Butchery');
+INSERT INTO categories (catname) VALUES ('Cosmetics');
+INSERT INTO categories (catname) VALUES ('Fruit');
+INSERT INTO categories (catname) VALUES ('Confectionery');
+INSERT INTO categories (catname) VALUES ('Valentine Goodies');
