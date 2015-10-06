@@ -1,26 +1,22 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
+# Nelisa Spaza Shop
 
-[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
+## I am helping a spaza shop owner:
 
-## Getting Started
+A shop owner Nelisa who is the mother to Xolani and grandmother to Ayanda lives in Khayelitsha decided to start a spaza shop soon after her brother got his bakkie because she used to work as domestic worker or unemployed. She runs her own business over the weekend, during the week Xolani helps her to do all the administration work and at the same time runs the shop.
 
-To use this theme, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+## Nelisa wants to know what to buy in bulk: 
+She to see the most popular product and catergory as well as the least popular product and category.
 
-## Bugs and Issues
+## She wants a web app for her spaza so that all reports be online
 
-Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
+She wants to be able to add new products, capture sales and purchases and edit and delete them.
 
-## Creator
+## Nelisa wants to limit access to her shop's data: 
+Nelisa wants administrators to log in before they can use the system
+Nelisa wants two different roles for authorised users - one role for people who can only see sales reports and another role for an administrator that can do everything in the system.
 
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Partner at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
+## Nelisa wants the navigation to be simpler: 
+Nelisa wants her experience more seamless with less visible screen refreshes.
+Nelisa wants to view the products list screen with a very smooth transition when searching for products by product name or category.
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-agency/blob/gh-pages/LICENSE) license.
