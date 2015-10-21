@@ -31,11 +31,11 @@ SELECT products.id AS theID,
        CAST( REPLACE( SUBSTRING( sales_csv.sales_price, 2 ) ,  ',',  '.' ) AS DECIMAL( 10, 2 ) ) AS thePrice, 
        sales_csv.no_sold AS theQuantity
 FROM sales_csv, products
-WHERE products.name = sales_csv.stock_item
+WHERE products.name = sales_csv.stock_item;
 
 #SUPPLIERS TABLE
-insert into suppliers (name)
-select distinct purchases_csv.shop from purchases_csv 
+insert into suppliers (shop)
+select distinct stock_purchases_csv.shop from stock_purchases_csv;
 
 
 #PURCHASESTABLE
@@ -46,15 +46,13 @@ SELECT products.id AS theID,
 FROM purchases_csv, products
 WHERE products.name = purchases_csv.item*/
 
-insert into purchases (date,price,supplier_id,product_id)
-select stock.date,stock.price,stock.supplier_id,products.id as Product_id from 
-(
-    SELECT STR_TO_DATE(CONCAT(purchases_csv.date,'-2015'),'%e-%b-%Y') AS DATE,
-    	   CAST( REPLACE( SUBSTRING( purchases_csv.cost, 2 ) ,  ',',  '.' ) AS DECIMAL( 10, 2 ) ) AS Price,
-           suppliers.id AS Supplier_id,
-           purchases_csv.item AS Product
-    FROM purchases_csv, suppliers 
-WHERE purchases_csv.shop = suppliers.name
-) 
-stock,products
-where stock.product = products.name
+insert into purchases (date,price,supplier_id,product_id,quantity)
+select  
+        stock_purchases_csv.cost as price
+        suppliers.id as supplier_id,
+        products.id as product_id,
+        stock_purchases_csv.no_sold as quantity,
+        STR_TO_DATE(CONCAT(stock_purchases_csv.date,'-2015'),'%e-%b-%Y') AS DATE,
+    	  CAST( REPLACE( SUBSTRING( stock_purchases_csv.cost, 2 ) ,  ',',  '.' ) AS DECIMAL( 10, 2 ) ) AS Price,
+FROM stock_purchases_csv, suppliers, products 
+WHERE stock_purchases_csv.shop = suppliers.shop and stock_purchases_csv.item = products.name;

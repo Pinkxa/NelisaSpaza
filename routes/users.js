@@ -20,7 +20,7 @@ exports.search = function (req, res, next) {
         console.log(searchQuery);
 
         var Admin = req.session.role === "admin"
-        var user = req.session.role !== "admin"
+        var view = req.session.role !== "admin"
 
         connection.query('SELECT * from users where username LIKE ?', searchQuery, function(err, results) {
             if (err)
@@ -33,7 +33,7 @@ exports.search = function (req, res, next) {
                 users: results,
                 layout : false,
                 in_ca : Admin,
-                action : user
+                action : view
         });
     });
 });
@@ -177,6 +177,7 @@ exports.delete = function(req, res, next){
 exports.login = function(req, res, next) {
         var input = JSON.parse(JSON.stringify(req.body));
        var username = input.username;
+       var Password = input.password;
         req.getConnection(function(err, connection) {
             if (err)
                 return next(err)
@@ -184,7 +185,7 @@ exports.login = function(req, res, next) {
             connection.query('SELECT * from users WHERE Username=?', [username], function(err, users) {
 
             var user = users[0];
-
+            
                 bcrypt.compare(input.password, user.Password, function(err, pass) {
 
             console.log(user);
