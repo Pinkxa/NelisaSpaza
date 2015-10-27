@@ -1,0 +1,56 @@
+module.exports = function(connection){
+    this.getCategory = function(id, cb, err){
+        if (err) return cb(err, null);
+        connection.query('SELECT * FROM categories WHERE id = ?', id, function(err, categories){
+            if (categories && categories.length > 0){
+                return cb(null, categories[0]);
+            }
+            // to do: do we want to return null!
+            cb(null, null);
+        });
+    }
+
+    this.addCategory = function(id, cb, err){
+        if (err) return cb(err, null);
+        connection.query('insert into categories set id?', id, function(err, categories) {
+                if (categories && categories.length > 0) {
+                    return cb(null, categories[0]);
+                }
+
+                cb(null, null);
+            });
+    };
+
+    this.updateCategory = function(id, cb, err){
+        if (err) return cb(err, null);
+        connection.query('UPDATE categories SET ? WHERE id = ?', [data, id], function(err, categories){
+                if (categories && categories.length > 0) {
+                    return cb(null, categories[0]);
+                }
+
+                cb(null, null);
+            });
+    };
+
+    this.deleteCategory = function(id, cb, err){
+        if (err) return cb(err, null);
+        connection.query('DELETE FROM categories WHERE id = ?', [id], function(err,categories){
+                if (categories && categories.length > 0) {
+                    return cb(null, categories[0]);
+                }
+
+                cb(null, null);
+            });
+    };
+
+    this.searchCategory = function(id, cb, err){
+        if (err) return cb(err, null);
+         connection.query('SELECT catname from categories where catname LIKE ?', id, function(err, results) {
+                if (categories && categories.length > 0) {
+                    return cb(null, categories[0]);
+                }
+
+                cb(null, null);
+            });
+    };
+}
